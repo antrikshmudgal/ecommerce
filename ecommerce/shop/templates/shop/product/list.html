@@ -1,0 +1,255 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.name }} {% else %} Products {% endif %}
+{% endblock %}
+
+{% block content %}
+<!--
+   <div class="container-fluid">
+      <div class="row" style="margin-top: 6%">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+              <div class="row">
+                  {% for product in products %}
+                      <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ product.get_absolute_url }}">
+                                <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 130px; width: auto">
+                            </a>
+                            <div class="caption">
+                                <h3 class="text-center">
+                                    <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                                </h3>
+                                <p class="text-center">Kshs. {{ product.price }}</p>
+                            </div>
+                        </div>
+                      </div>
+                  {% endfor %}
+              </div>
+
+
+          </div><! /.blog-post ->
+
+        </div><!- /.blog-main >
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module">
+            <h4>Categories</h4>
+            <ol class="list-unstyled">
+              <li {% if not category %} class="active"{% endif %}><a href="{% url 'shop:product_list' %}">All</a></li>
+            {% for c in categories %}
+
+              <li {% if category.slug == c.slug %} class="active"{% endif %}>
+                  <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+              </li>
+            {% endfor %}
+            </ol>
+          </div>
+        </div><!- /.blog-sidebar ->
+
+      </div><!- /.row ->
+
+    </div><!- /.container ->
+
+-->
+
+    <section class="top-discount-area d-md-flex align-items-center">
+    <!-- Single Discount Area -->
+    <div class="single-discount-area">
+        <h5>Free Shipping &amp; Returns</h5>
+        <h6><a href="#">BUY NOW</a></h6>
+    </div>
+    <!-- Single Discount Area -->
+    <div class="single-discount-area">
+        <h5>20% Discount for all dresses</h5>
+        <h6>USE CODE: Smproduct</h6>
+    </div>
+    <!-- Single Discount Area -->
+    <div class="single-discount-area">
+        <h5>20% Discount for students</h5>
+        <h6>USE CODE: Smproduct</h6>
+    </div>
+</section>
+<section class="row">
+
+    <section class="col-md-9">
+<!-- ****** Welcome Slides Area Start ****** -->
+        <section class="welcome_area">
+            <div class="welcome_slides owl-carousel">
+                <!-- Single Slide Start -->
+                <div class="single_slide height-800 bg-img background-overlay" style="background-image: url('/static/images/slider1.jpg');">
+                    <!--<div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="welcome_slide_text">
+                                    <h6 data-animation="bounceInDown" data-delay="0" data-duration="500ms">* Only today we offer free shipping</h6>
+                                    <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Fashion Trends</h2>
+                                    <a href="#" class="btn karl-btn" data-animation="fadeInUp" data-delay="1s" data-duration="500ms">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+
+                <!-- Single Slide Start -->
+                <div class="single_slide height-800 bg-img background-overlay" style="background-image: url('/static/images/slider2.jpg');">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="welcome_slide_text">
+                                    <h6 data-animation="fadeInDown" data-delay="0" data-duration="500ms">* Only today we offer free shipping</h6>
+                                    <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Women Fashion</h2>
+                                    <a href="#" class="btn karl-btn" data-animation="fadeInLeftBig" data-delay="1s" data-duration="500ms">Check Collection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Slide Start -->
+                <div class="single_slide height-800 bg-img background-overlay" style="background-image: url('/static/images/slider3.jpg');">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="welcome_slide_text">
+                                    <h6 data-animation="fadeInDown" data-delay="0" data-duration="500ms">* Only today we offer free shipping</h6>
+                                    <h2 data-animation="bounceInDown" data-delay="500ms" data-duration="500ms">Summer Collection</h2>
+                                    <a href="#" class="btn karl-btn" data-animation="fadeInRightBig" data-delay="1s" data-duration="500ms">Check Collection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ****** Welcome Slides Area End ****** -->
+    </section>
+    <section class="col-md-3" style="padding:0;">
+      <div style="height:32%;margin:10px 25px 5px -5px;">
+        <a href="#">
+          <img src="{% static 'images/men_banner.jpg' %}" width="100%" height="100%"/>
+        </a>
+      </div>
+      <div style="height:32%;margin:10px 25px 5px -5px;">
+        <a href="#">
+          <img src="{% static 'images/women_banner.jpg' %}" width="100%" height="100%"/>
+        </a>
+      </div><div style="height:31%;margin:10px 25px -45px -5px;">
+        <a href="#">
+          <img src="{% static 'images/sale_banner.jpg' %}" width="100%" height="100%"/>
+        </a>
+      </div>
+
+    </section>
+
+</section>
+
+
+        <!-- ****** Top Catagory Area Start ****** -->
+        <section class="top_catagory_area d-md-flex clearfix">
+            <!-- Single Catagory -->
+            <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image: url('/static/images/sale_casuals.jpg');padding:0px;">
+                <div class="catagory-content">
+                    <h6>On Casuals</h6>
+                    <h2>Min 30% off</h2>
+                    <a href="#" class="btn karl-btn">SHOP NOW</a>
+                </div>
+            </div>
+            <!-- Single Catagory -->
+            <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image: url('/static/images/women_sale.jpg')">
+                <div class="catagory-content">
+                    <h6>On Women's Jeans</h6>
+                    <h2>40% off</h2>
+                    <a href="#" class="btn karl-btn">SHOP NOW</a>
+                </div>
+            </div>
+        </section>
+        <!-- ****** Top Catagory Area End ****** -->
+
+<!-- ****** New Arrivals Area Start ****** -->
+        <section class="new_arrivals_area section_padding_100_0 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_heading text-center">
+                            <h2>New Arrivals</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row karl-new-arrivals">
+                  {% for product in products %}
+                  <!-- Single gallery Item Start -->
+                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
+                        <!-- Product Image -->
+                        <div class="product-img" style="height:500px;width:100%;">
+                            <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="" height="100%" width="100%">
+                            <div class="product-quicview">
+                                <a href="{{ product.get_absolute_url }}" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product-description">
+                            <h4 class="product-price">{{ product.price }}</h4>
+                            <p>{{ product.name }}</p>
+                            <!-- Add to Cart -->
+                            <a href="{{ product.get_absolute_url }}" class="add-to-cart-btn">ADD TO CART</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+                  {% for product in products %}
+                    <!-- Single gallery Item Start -->
+                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
+                        <!-- Product Image -->
+                        <div class="product-img" height="400px" width="400px">
+                          <a href="{{ product.get_absolute_url }}">
+                            <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="">
+                            <div class="product-quicview">
+                                <a href="{{ product.get_absolute_url }}" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
+                            </div>
+                          </a>
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product-description">
+                            <h4 class="product-price">{{ product.price }}</h4>
+                            <p>{{ product.name }}</p>
+                            <!-- Add to Cart -->
+                            <a href="{{ product.get_absolute_url }}" class="add-to-cart-btn">ADD TO CART</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+        <!-- ****** New Arrivals Area End ****** -->
+
+
+                <!-- ****** Offer Area Start ****** -->
+                <section class="offer_area height-700 section_padding_100 bg-img" style="background-image: url('/static/images/bg-5.jpg')">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-end justify-content-end">
+                            <div class="col-12 col-md-8 col-lg-6">
+                                <div class="offer-content-area wow fadeInUp" data-wow-delay="1s">
+                                    <h2>White t-shirt <span class="karl-level">Hot</span></h2>
+                                    <p>* Free shipping until 25 July 2018</p>
+                                    <div class="offer-product-price">
+                                        <h3><span class="regular-price">₹ 2590</span> ₹ 1590</h3>
+                                    </div>
+                                    <a href="#" class="btn karl-btn mt-30">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ****** Offer Area End ****** -->
+{% endblock %}
